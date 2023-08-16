@@ -1,0 +1,21 @@
+/* ===================================================
+    Date: 2023-08-08 11:27:27
+    Desc: Dashboard Module CSS
+    Author: 🟣 Enok Lima
+=====================================================*/
+
+.container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    height: 100%;
+}
+
+.sidebar__container {
+    min-height: 0;
+    height: 100%;
+}
+
+.content__container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}

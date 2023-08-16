@@ -1,0 +1,36 @@
+/* ===================================================
+    Date: 2023-08-10 07:23:23
+    Desc: PrimaryButton css
+    Author: 🟣 Enok Lima
+=====================================================*/
+
+
+.primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: solid 1px transparent;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.primary:hover {
+    background-color: #ffffff;
+    color: var(--primary-color);
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px var(--primary-light-color), 0 1px 2px 0 rgb(0, 0, 0);
+}
+
+.primary:disabled {
+    background: var(--neutral-light-color);
+    color: var(--neutral-color);
+    border-color: var(--neutral-color);
+    box-shadow: none;
+    cursor: not-allowed;
+}
