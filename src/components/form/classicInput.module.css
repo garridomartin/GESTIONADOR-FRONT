@@ -1,0 +1,53 @@
+/* ===================================================
+    Date: 2023-08-02
+    Desc: Float Input Component styles
+    Author: 🟣 Enoc Lima
+=====================================================*/
+
+
+.classicInput__container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-bottom: 2rem;
+}
+
+.classicInput {
+    width: 100%;
+    border: solid 1px var(--input-border-color);
+    border-radius: 0.2rem;
+    color: var(--text-color);
+    font-size: var(--font-size-input);
+    height: 2.5rem;
+    padding: 0.2rem 0.8rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.classicInput:focus {
+    outline: none;
+    border: solid 1px transparent;
+    box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px var(--primary-light-color), 0 1px 2px 0 rgb(0, 0, 0);
+}
+
+.classicInput__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 0.5rem;
+    background: #fff;
+    color: var(--input-border-color);
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.error {
+    position: absolute;
+    bottom: 20%;
+    color: var(--error-color);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,59 @@
+/* ===================================================
+    Date: 2023-08-08 12:26:35
+    Desc: Sidebar Left Module CSS
+    Author: 🟣 Enok Lima
+=====================================================*/
+
+
+.container {
+    height: 100%;
+    padding: 1rem 0.2rem;
+    border-right: solid 1px var(--divider-color);
+    background-color: #4A4E69;
+    border-radius: 0 25px 0 0;
+}
+
+.content {
+    height: 100%;
+}
+
+.itemContent {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 0;
+    height: 100%;
+}
+
+.itemTop {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+.itemMidle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+    line-height: 1;
+    user-select: none;
+}
+
+.icon {
+    display: flex;
+}
+
+.itemText {
+    display: flex;
+}

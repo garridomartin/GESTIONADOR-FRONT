@@ -1,0 +1,107 @@
+/* ===================================================
+    Date: 2023-08-09 17:55:19
+    Desc: Global css
+    Author: 🟣 Enok Lima
+=====================================================*/
+
+
+:root {
+    --primary-color: #F36506;
+    --primary-light-color: #ff8939c2;
+    --secondary-color: #f2f2f2;
+    --title-color: #2a2a2a;
+    --text-color: #585f78;
+    --link-color: #F36506;
+    --link-hover-color: #fd812f;
+    --input-border-color: #cccccc;
+    --input-border-focus-color: #ffffff;
+    --input-border-error-color: #ff0000;
+    --input-label-color: #666666;
+    --label-hover-color: #666666;
+    --input-text-color: #000000;
+    --error-color: #ff2a5a;
+    --success-color: #008000;
+    --warning-color: #FFA500;
+    --info-color: #0000FF;
+    --neutral-color: #bfbfbf;
+    --neutral-light-color: #ececec;
+    --divider-color: #9a8c9847;
+
+    --font-size-input: 0.9rem;
+    --font-size-title: 1.5rem;
+    --font-size-text: 0.9rem;
+
+    --navlink-color: #a7a7a7;
+    --navlink-background: transparent;
+    --navlink-hover-color: #4A4E69;
+    --navlink-hover-background: #fff;
+    --navlink-active-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--title-color);
+}
+
+.link {
+    color: var(--link-color);
+    font-size: var(--font-size-text);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.link:hover {
+    color: var(--link-hover-color);
+}
+
+/************ navlink **********************/
+.navlink {
+    display: flex;
+    transition: all 0.3s ease-in-out;
+    color: var(--navlink-color);
+    font-size: var(--font-size-text);
+    font-weight: 600;
+}
+
+.active {
+    color: var(--navlink-active-color);
+    border-radius: 0.2rem;
+}
+
+.navlink:hover {
+    color: var(--navlink-hover-color);
+    background: var(--navlink-hover-background);
+    border-radius: 0.2rem;
+}
+/************ end navlink ******************/
+
+/************ display none **********************/
+.displayNone {
+    display: none;
+}
+/************ end display none ******************/
+/************ display flex **********************/
+.flex {display: flex;}
+/************ end display flex ******************/
+/************ position absolute **********************/
+.positionAbsolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+/************ end position absolute ******************/

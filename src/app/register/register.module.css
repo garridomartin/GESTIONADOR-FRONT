@@ -1,0 +1,97 @@
+/* ===================================================
+    Date: 2023-08-05 06:44:30
+    Desc: Register page styles
+    Author: 🟣 Enok Lima
+=====================================================*/
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../../public/background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #ffffffd9;
+    backdrop-filter: blur(15px);
+    z-index: 0;
+  }
+  
+  .register {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      max-width: 400px;
+      width: 100%;
+      max-height: 95%;
+      height: fit-content;
+      background: #fff;
+      border-radius: 10px;
+      min-height: 0;
+      overflow-y: auto;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+      z-index: +1;
+  }
+  
+  .register__header {
+      padding-bottom: 2rem;
+  }
+  
+  .register__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      width: 100%;
+  }
+  
+  .register__form {
+      display: flex;
+      flex-direction: column;
+      max-width: 260px;
+      width: 100%;
+  }
+  
+  .text {
+      font-size: var(--font-size-text);
+      font-weight: 400;
+      color: var(--text-color);
+  }
+  
+  .register__footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      width: 100%;
+  }
+  
+  .googleRegister {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+  }
+  
+  @media screen and (max-width: 421px) {
+      .register {
+          max-width: none;
+          max-height: none;
+          height: 100%;
+          border-radius: 0;
+      }
+  }

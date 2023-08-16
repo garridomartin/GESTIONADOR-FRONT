@@ -1,0 +1,103 @@
+/* ===================================================
+    Date: 2023-08-02
+    Desc: Login Page styles
+    Author: 🟣 Enoc Lima
+=====================================================*/
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../../public/background.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ffffffd9;
+  backdrop-filter: blur(15px);
+  z-index: 0;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    max-width: 400px;
+    width: 100%;
+    max-height: 95%;
+    height: fit-content;
+    background: #fff;
+    border-radius: 10px;
+    min-height: 0;
+    overflow-y: auto;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    z-index: +1;
+}
+
+.login__header {
+    padding-bottom: 2rem;
+}
+
+.login__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 260px;
+    width: 100%;
+}
+
+.forgot__container {
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.text {
+    font-size: var(--font-size-text);
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.login__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.googleLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+@media screen and (max-width: 421px) {
+    .login {
+        max-width: none;
+        max-height: none;
+        height: 100%;
+        border-radius: 0;
+    }
+}
