@@ -12,6 +12,8 @@ import { useRouter } from "next/navigation";
 //import { selectUser } from "@/context/redux/features/userSlice";
 //import { useGetUserQuery } from "@/context/redux/api_handler/userApi";
 import { useGetDefaultsQuery, useLazyGetNavigationQuery } from "@/context/redux/api_handler/navigationApi";
+import style from './home.module.css';
+
 
 export default function Home() {
   const router = useRouter();
@@ -22,10 +24,14 @@ export default function Home() {
   const [trigger,{data}] = useLazyGetNavigationQuery();
   console.log(data)
   return (
-    <div  >
+    <div  className={style.home__container}>
       <div>{}</div>
-      <button onClick={() => trigger('logout')} >logout</button>
-      <button onClick={() => router.push('/login')}> Login </button>
+      <button className={style.button}
+        onClick={() => trigger('logout')} >
+          logout
+        </button>
+      <button className={style.button}
+      onClick={() => router.push('/login')}> Login </button>
     </div>
   )
 }
