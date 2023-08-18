@@ -6,21 +6,26 @@
 
 
 'use client';
-import { useStyle } from "@/context/react/styleContext"
-import { useAppDispatch, useAppSelector } from "@/context/redux/typedHoocks";
-import { selectUser } from "@/context/redux/features/userSlice";
-import { useGetUserQuery } from "@/context/redux/api_handler/userApi";
-import { useGetDefaultsQuery } from "@/context/redux/api_handler/navigationApi";
+import { useRouter } from "next/navigation";
+//import { useStyle } from "@/context/react/styleContext"
+//import { useAppDispatch, useAppSelector } from "@/context/redux/typedHoocks";
+//import { selectUser } from "@/context/redux/features/userSlice";
+//import { useGetUserQuery } from "@/context/redux/api_handler/userApi";
+import { useGetDefaultsQuery, useLazyGetNavigationQuery } from "@/context/redux/api_handler/navigationApi";
 
 export default function Home() {
-  const { screen } =  useStyle();
-  const { isAuthenticated, user } = useAppSelector(selectUser);
+  const router = useRouter();
+  //const { screen } =  useStyle();
+  //const { isAuthenticated, user } = useAppSelector(selectUser);
   //const data = useGetUserQuery("character/84");
-  const data = useGetDefaultsQuery("character/84");
-  
+  //const data = useGetNavigationQuery("logout");
+  const [trigger,{data}] = useLazyGetNavigationQuery();
+  console.log(data)
   return (
     <div  >
-      {}
+      <div>{}</div>
+      <button onClick={() => trigger('logout')} >logout</button>
+      <button onClick={() => router.push('/login')}> Login </button>
     </div>
   )
 }

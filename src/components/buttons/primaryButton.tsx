@@ -14,14 +14,16 @@ type ButtonProps = {
     disabled?: boolean;
     onclick?: () => void;
     Icon?: any;
+    type?: "button" | "submit" | "reset" | undefined;
 }
 
-const PrimaryButton:React.FC<ButtonProps> = ({text="Enviar", value=null, onclick, Icon, disabled }) => {
+const PrimaryButton:React.FC<ButtonProps> = ({text="Enviar", value=null, onclick, Icon, disabled, type }) => {
   return (
     <button  className={style.primary}
         onClick={onclick}
         value={value && value}
         disabled={disabled && disabled}
+        type={type && type}
     >
         <Icon fontSize={24}/>
         {text}

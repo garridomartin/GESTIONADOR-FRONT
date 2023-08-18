@@ -16,7 +16,13 @@ interface ServerResponse {
 
 export const userApi = createApi({
     reducerPath: "currentUserApi",
-    baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_URL }),
+    baseQuery: fetchBaseQuery({ 
+        baseUrl: process.env.NEXT_PUBLIC_API_URL,
+        headers: {
+            'Async': 'true'
+        },
+        credentials: 'include'
+     }),
     endpoints: (builder) => ({
         getUser: builder.query<ServerResponse, string>({
             query: (url) => url,
@@ -24,7 +30,7 @@ export const userApi = createApi({
     }),
 });
 
-export const { useGetUserQuery } = userApi;
+export const { useGetUserQuery, useLazyGetUserQuery } = userApi;
 export const selectUser = (state: RootState) => state.currentUserApi;
 
 //export default userApi.reducer;

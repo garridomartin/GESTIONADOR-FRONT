@@ -11,11 +11,13 @@ import Header from '@/components/header/header';
 
 
 function dashboardLayout({
-  children
+  children,
+  params
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  params: string
 }) {
-
+    console.log(params)
     return <div className={style.container}>
         <div className={style.sidebar__container}>
             <SidebarLeft />

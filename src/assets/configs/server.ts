@@ -1,21 +1,13 @@
-import axios from "axios";
+/* ===================================================
+    Date: 2023-08-02
+    Desc: Server URL and Cookie handler
+    Author: 🟣 Enoc Lima
+=====================================================*/
 
 
-function server_url(endpoint: string): string {
+export function server_url(endpoint: string): string {
     let url: string = endpoint.trim().replace(/^\/+|\/+$/g, "");
     return process.env.DEV ? `${process.env.SERVER_URL}/${url}` : `/${endpoint}/`;
-}
-
-
-function server(method: string, url: string, data: any = null): Promise<any> {
-    return axios({
-        validateStatus: (status: number) => status >= 200 && status < 400,
-        withCredentials: true,
-        method: method,
-        url: server_url(url),
-        headers: {"Async": true, "X-CSRFToken": getCookie("csrftoken")},
-        data: data && data
-    })
 }
 
 function getCookie(name: string): string | null {
@@ -33,7 +25,4 @@ function getCookie(name: string): string | null {
     return cookieValue;
 }
 
-export { 
-    server, 
-    server_url
-}
+export default getCookie;
