@@ -7,6 +7,7 @@
 
 'use client';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import style from './login.module.css';
 import ClassicInput from '@/components/form/inputs';
@@ -14,20 +15,40 @@ import PrimaryButton from '@/components/buttons/primaryButton';
 import { BiLogInCircle } from 'react-icons/bi';
 import { FcGoogle } from 'react-icons/fc';
 import formatValidate from '@/assets/js/format_validates';
+import { usePostNavigationMutation } from '@/context/redux/api_handler/navigationApi';
+import { useAppSelector, useAppDispatch } from '@/context/redux/typedHoocks';
+import { setCurrentUser } from "@/context/redux/features/userSlice";
+import { selectUser } from '@/context/redux/features/userSlice';
 
 
 function Login() {
     const [formData, setFormData] = useState({email: "", password: ""})
     const [buttonDisabled, setButtonDisabled] = useState(true);
+    const router = useRouter();
+    const dispatch = useAppDispatch();
+
+    const [postNavigation, apiResponse] = usePostNavigationMutation();
+
+    const { isAuthenticated, username } = useAppSelector(selectUser);
+    
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        postNavigation({url: 'signIn', body: formData})
     }
+
+    useEffect(() => {
+        isAuthenticated && username && router.push(username);
+    },[isAuthenticated])
+
+    useEffect(() => {
+        apiResponse?.status === 'fulfilled' && dispatch(setCurrentUser(apiResponse.data));
+    },[apiResponse])
     
     useEffect(() => {
         formData.email && formData.password ? setButtonDisabled(false) : setButtonDisabled(true);
     },[formData])
 
-    return (
+    return ( isAuthenticated ? <div>loading...</div> :
         <div className={style.container}>
             <div className={style.login}>
                 <div className={style.login__header}>
@@ -57,7 +78,7 @@ function Login() {
                         </Link>
                         </span>
 
-                        <PrimaryButton text="Iniciar sesión" Icon={BiLogInCircle} disabled={buttonDisabled} />
+                        <PrimaryButton text="Iniciar sesión" type='submit' Icon={BiLogInCircle} disabled={buttonDisabled} />
                     </form>
 
                     <div className={style.login__footer}>

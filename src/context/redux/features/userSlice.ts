@@ -12,14 +12,17 @@ import { RootState } from '../store';
 type StateValue = {
     current_user: {
         isAuthenticated: boolean,
-        user: any
+        name?: string;
+        username?: string;
+        profilePict?: string | null;
+        isAdmin?: boolean;
+        isSeller?: boolean;
     }
 }
 
 const initialState: StateValue = {
     current_user: {
-        isAuthenticated: false,
-        user: {}
+        isAuthenticated: false
     }
 }
 
@@ -27,16 +30,13 @@ export const userSlice = createSlice({
     name: "user",
     initialState,
     reducers: {
-        setAuthenticated: (state, action: PayloadAction<boolean>) => {
-            state.current_user.isAuthenticated = action.payload;
-        },
-        setUser: (state, action: PayloadAction<any>) => {
-            state.current_user.user = action.payload;
+        setCurrentUser: (state, action: PayloadAction<StateValue['current_user']>) => {
+            state.current_user = {...action.payload};
         }
     }
 });
 
-export const { setAuthenticated, setUser } = userSlice.actions;
+export const { setCurrentUser } = userSlice.actions;
 export const selectUser = (state: RootState) => state.userReducer.current_user;
 
 export default userSlice.reducer;

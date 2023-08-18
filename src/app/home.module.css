@@ -1,0 +1,34 @@
+/* ===================================================
+    Date: 2023-08-18 07:02:48
+    Desc: Home Style css
+    Author: 🟣 Enok Lima
+=====================================================*/
+
+
+.home__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../public/dark-texture-background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.home__container::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    background: rgba(65, 70, 105, 0.33);
+    backdrop-filter: blur(1px);
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem 1rem;
+    z-index: +1;
+}

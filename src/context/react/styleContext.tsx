@@ -7,19 +7,9 @@
 
 "use client";
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
-import styleColors from '@/assets/configs/app.colors.json';
 
 /********* typeScriptsTypes ***********/
 type StyleContextValue = {
-    readonly buttons: typeof styleColors.buttons,
-    readonly inputs: typeof styleColors.inputs,
-    readonly title: typeof styleColors.title,
-    readonly text: typeof styleColors.text,
-    readonly links: typeof styleColors.links,
-    readonly background: typeof styleColors.background,
-    readonly divider: typeof styleColors.divider,
-    readonly actions: typeof styleColors.actions,
-    readonly colors: typeof styleColors.colors,
     readonly screen: number;
     setScreen?: (value: number) => void;
     readonly sidebarOpen: boolean;
@@ -66,15 +56,6 @@ const StyleProvider: React.FC<StyleProviderProps> = ({ children }) => {
 
     return typeof window !== 'undefined' ? (
         <StyleContext.Provider value={{
-            buttons: styleColors.buttons,
-            inputs: styleColors.inputs,
-            title: styleColors.title,
-            text: styleColors.text,
-            links: styleColors.links,
-            background: styleColors.background,
-            divider: styleColors.divider,
-            actions: styleColors.actions,
-            colors: styleColors.colors,
             screen,
             setSidebarOpen,
             sidebarOpen,

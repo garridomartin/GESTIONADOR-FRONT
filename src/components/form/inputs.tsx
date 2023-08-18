@@ -33,7 +33,7 @@ function ClassicInput ({ type, name, label, errorMessage, validator, setFormData
     
     const handleChange = (event: any) => {
         setInputValue({[name]: event.target.value});
-        setValidate({error: null, pending: false});
+        setValidate({...validate, pending: false});
     }
 
     const handleBlur = (e: any) => {

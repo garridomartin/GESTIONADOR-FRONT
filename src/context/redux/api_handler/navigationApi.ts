@@ -15,7 +15,11 @@ interface DataPayload {
 
 export const navigationApi = createApi({
     reducerPath: "responseApi",
-    baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_URL }),
+    baseQuery: fetchBaseQuery({ 
+        baseUrl: process.env.NEXT_PUBLIC_API_URL,
+        headers: {'Async': 'true'},
+        credentials: 'include'
+     }),
     endpoints: (builder) => ({
         getDefaults: builder.query<any, string>({
             query: (url) => url,
@@ -34,6 +38,6 @@ export const navigationApi = createApi({
 });
 
 
-export const { useGetDefaultsQuery, useGetNavigationQuery, usePostNavigationMutation } = navigationApi;
+export const { useGetDefaultsQuery, useGetNavigationQuery, usePostNavigationMutation, useLazyGetNavigationQuery } = navigationApi;
 
 export const selectNavigation = (state: RootState) => state.responseApi;

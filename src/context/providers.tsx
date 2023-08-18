@@ -9,12 +9,15 @@
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import StyleProvider from './react/styleContext';
+import AuthProvider from './react/authContext';
 
 function Providers({ children }:{ children: React.ReactNode }) {
   return (
     <Provider store={store}>
         <StyleProvider>
-          {children}
+          <AuthProvider>
+            {children}
+          </AuthProvider>
         </StyleProvider>
     </Provider>
   )
