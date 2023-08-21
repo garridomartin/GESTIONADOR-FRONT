@@ -16,6 +16,7 @@ type InputProps = {
     errorMessage?: string;
     validator: (value: string) => boolean;
     setFormData: (value: any) => void;
+    serverValidate?: {values: {[key: string]: boolean}, setValues: (value: any) => void};
 }
 
 type MyState = {
@@ -25,15 +26,17 @@ type MyState = {
 type MyValidate = {
     error: boolean | null;
     pending: boolean;
+    server?: boolean;
 }
 
-function ClassicInput ({ type, name, label, errorMessage, validator, setFormData }: InputProps) : React.ReactNode {
+function ClassicInput ({ type, name, label, errorMessage, validator, setFormData, serverValidate }: InputProps) : React.ReactNode {
     const [inputValue, setInputValue] = useState<MyState>({[name]: ""});
-    const [validate, setValidate] = useState<MyValidate>({error: null, pending: true});
+    const [validate, setValidate] = useState<MyValidate>({error: null, pending: true, server: false});
     
     const handleChange = (event: any) => {
         setInputValue({[name]: event.target.value});
-        setValidate({...validate, pending: false});
+        setValidate({ ...validate, pending: false, server: false, });
+        serverValidate?.setValues({error: false, warn: false, pending: true});
     }
 
     const handleBlur = (e: any) => {
@@ -49,7 +52,7 @@ function ClassicInput ({ type, name, label, errorMessage, validator, setFormData
 
     return (
         <div className={style.classicInput__container}>
-            <input className={style.classicInput}
+            <input className={`${style.classicInput} ${serverValidate?.values.error ? style.inputError : serverValidate?.values.warn ? style.inputWarn : ''}`} 
                 type={type}
                 name={name}
                 placeholder={label}
@@ -62,7 +65,7 @@ function ClassicInput ({ type, name, label, errorMessage, validator, setFormData
                 onBlur={handleBlur}
             />
             <span className={style.error}>
-                {validate.error && <><BiErrorCircle /> {errorMessage}</> }
+                {validate.error && <><BiErrorCircle fontSize={16}/> {errorMessage}</> }
             </span>
         </div>
     )

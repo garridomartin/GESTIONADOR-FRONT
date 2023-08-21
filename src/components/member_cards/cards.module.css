@@ -1,0 +1,112 @@
+/* ===================================================
+    Date: 2023-08-19 13:43:50
+    Desc: Me
+    Author: 🟣 Enok Lima
+=====================================================*/
+
+/* clase de card con esquina superior derecha plegada */
+
+.me__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 279px;
+    user-select: none;
+    z-index: +1;
+}
+
+.me__card__feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 86%;
+    height: 100%;
+    padding-top: 1rem;
+    padding-bottom: 5rem;
+    align-items: flex-start;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.me_title {
+    text-align: center;
+    margin: 0 auto;
+    color: var(--primary-color)
+}
+
+.spacer {
+    width: 100%;
+    height: 160px;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 100%);
+}
+
+.colored {
+    position: absolute;
+    top: 3.69rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    width: 100%;
+}
+
+.pricing {
+    position: relative;
+}
+
+.price {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+}
+
+.me__card__feature__list {
+    width: 100%;
+    text-align: start;
+    padding: 0 1rem;
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.ul__items > li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 0;
+    color: var(--text-color);
+}
+
+.me__card__feature__button {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.price__period {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.green {
+    color: #8cc63f;
+}
+.grey {
+    color: #bdccd4;
+}

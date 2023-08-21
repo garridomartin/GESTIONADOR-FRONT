@@ -17,6 +17,10 @@ type StateValue = {
         profilePict?: string | null;
         isAdmin?: boolean;
         isSeller?: boolean;
+        warn?: string;
+        error?: string;
+        info?: string;
+        success?: string;
     }
 }
 
@@ -31,7 +35,7 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
         setCurrentUser: (state, action: PayloadAction<StateValue['current_user']>) => {
-            state.current_user = {...action.payload};
+            state.current_user = {...initialState.current_user, ...action.payload};
         }
     }
 });

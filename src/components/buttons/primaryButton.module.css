@@ -34,3 +34,21 @@
     box-shadow: none;
     cursor: not-allowed;
 }
+/*--------------------->    ------------------->*/
+.green {
+    background-color: #8cc63f;
+}
+
+.green:hover {
+    color: #8cc63f;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #8cc63f, 0 1px 2px 0 rgb(0, 0, 0);
+}
+
+.grey {
+    background-color: #bdccd4;
+}
+
+.grey:hover {
+    color: #bdccd4;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #bdccd4, 0 1px 2px 0 rgb(0, 0, 0);
+}

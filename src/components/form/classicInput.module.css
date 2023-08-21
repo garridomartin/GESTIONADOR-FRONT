@@ -45,9 +45,22 @@
 
 .error {
     position: absolute;
-    bottom: 20%;
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    bottom: 17%;
     color: var(--error-color);
     font-size: 0.75rem;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.inputError {
+    border-color: var(--error-color);
+    color: var(--error-color);
+}
+
+.inputWarn {
+    border-color: var(--error-color);
+    color: var(--error-color);
 }

@@ -11,7 +11,7 @@ import { RootState } from "../store";
 
 interface ServerResponse {
     isAutnenticated: boolean;
-    user: any;
+    [key: string]: string | boolean | number | object | undefined | null;
 }
 
 export const userApi = createApi({

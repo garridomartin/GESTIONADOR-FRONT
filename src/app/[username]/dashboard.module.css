@@ -12,10 +12,16 @@
 
 .sidebar__container {
     min-height: 0;
-    height: 100%;
+    height: 100vh;
 }
 
 .content__container {
     display: grid;
     grid-template-rows: auto 1fr;
+    overflow-y: auto;
+}
+
+.content {
+    min-height: 0;
+    overflow-y: auto;
 }
