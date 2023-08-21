@@ -15,11 +15,12 @@ type ButtonProps = {
     onclick?: () => void;
     Icon?: any;
     type?: "button" | "submit" | "reset" | undefined;
+    extraClassName?: string;
 }
 
-const PrimaryButton:React.FC<ButtonProps> = ({text="Enviar", value=null, onclick, Icon, disabled, type }) => {
+const PrimaryButton:React.FC<ButtonProps> = ({text="Enviar", value=null, onclick, Icon, disabled, type, extraClassName }) => {
   return (
-    <button  className={style.primary}
+    <button  className={style.primary + ` ${extraClassName && style[extraClassName]}`}
         onClick={onclick}
         value={value && value}
         disabled={disabled && disabled}

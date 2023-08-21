@@ -21,43 +21,45 @@ function Register () {
 
     return (
         <div className={style.container}>
-        <div className={style.register}>
-            <div className={style.register__header}>
-                <h1 className='title'>Registrate</h1>
-            </div>
-            <div className={style.register__body}>
-                <form className={style.register__form}
-                    onSubmit={handleSubmit}
-                >
-                    <ClassicInput type="email" name="email" label="Correo Electrónico" />
-                    <br/>
-                    <ClassicInput type="password" name="password" label="Contraseña" />
-                    <ClassicInput type="password" name="confir_password" label="Confirmar Contraseña" />
+            <div className={style.wrapper}>
+                <div className={style.register}>
+                    <div className={style.register__header}>
+                        <h1 className='title'>Registrate</h1>
+                    </div>
+                    <div className={style.register__body}>
+                        <form className={style.register__form}
+                            onSubmit={handleSubmit}
+                        >
+                            <ClassicInput type="email" name="email" label="Correo Electrónico" />
+                            <br/>
+                            <ClassicInput type="password" name="password" label="Contraseña" />
+                            <ClassicInput type="password" name="confir_password" label="Confirmar Contraseña" />
 
-                    <PrimaryButton text="Registrate" Icon={BiAddToQueue} />
-                </form>
-                
-                <div className={style.register__footer}>
-                    <p className={style.text}>
-                        ¿Ya tienes cuenta? <Link className='link'
-                            href="/login">
-                            Iniciar sesión
-                        </Link>
-                    </p>
-                    <div>
-                        <Link className={style.googleRegister}  href="/google-login">
-                            <span className={style.text}>
-                                Registrate con tu cuenta de Google
-                            </span>
-                            <FcGoogle fontSize={30} />
-                        </Link>
+                            <PrimaryButton text="Registrate" Icon={BiAddToQueue} />
+                        </form>
+                        
+                        <div className={style.register__footer}>
+                            <p className={style.text}>
+                                ¿Ya tienes cuenta? <Link className='link'
+                                    href="/login">
+                                    Iniciar sesión
+                                </Link>
+                            </p>
+                            <div>
+                                <Link className={style.googleRegister}  href="/google-login">
+                                    <span className={style.text}>
+                                        Registrate con tu cuenta de Google
+                                    </span>
+                                    <FcGoogle fontSize={30} />
+                                </Link>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-
             </div>
-        </div>
 
-    </div>
+        </div>
     )
 }
 

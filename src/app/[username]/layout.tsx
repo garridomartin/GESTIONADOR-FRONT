@@ -24,7 +24,9 @@ function dashboardLayout({
         </div>
         <div className={style.content__container}>
             <Header />
-            {children}
+            <div className={style.content}>
+                {children}
+            </div>
         </div>
     </div>
 }

@@ -27,22 +27,25 @@ import {
     BiX
 } from 'react-icons/bi';
 
+interface ParamsType {
+    username: string
+}
 
 function SidebarLeft() : React.ReactNode {
     const [classname, setClassname] = useState<string>('displayNone');
     const { showBurger, setShowBurger, extendMenu, setExtendMenu, sidebarOpen } = useStyle();
     const { screen } = useStyle();
     const path = usePathname();
-    const { username } = useParams();
-    
+    const username: string = decodeURIComponent(useParams().username as any);
+
     const items = [
-        {icon: BiSolidHomeAlt2, text: 'dashboard', link: `/${username? username: 'anonymous'}/`},
-        {icon: BiSolidWidget, text: 'Productos', link: `/${username? username: 'anonymous'}/products/`},
-        {icon: BiSolidBookmarks, text: 'Facturación', link: `/${username? username: 'anonymous'}/envoicing/`},
-        {icon: BiSolidShoppingBagAlt, text: 'Ventas', link: `/${username? username: 'anonymous'}/sales/`},
-        {icon: BiSolidGroup, text: 'Clientes', link: `/${username? username: 'anonymous'}/clients/`},
-        {icon: BiSolidFace, text: 'Users', link: `/${username? username: 'anonymous'}/users/`},
-        {icon: BiSolidExtension, text: 'Integraciones', link: `/${username? username: 'anonymous'}/integrations/`}
+        {icon: BiSolidHomeAlt2, text: 'dashboard', link: `/${username}/`},
+        {icon: BiSolidWidget, text: 'Productos', link: `/${username}/products/`},
+        {icon: BiSolidBookmarks, text: 'Facturación', link: `/${username}/envoicing/`},
+        {icon: BiSolidShoppingBagAlt, text: 'Ventas', link: `/${username}/sales/`},
+        {icon: BiSolidGroup, text: 'Clientes', link: `/${username}/clients/`},
+        {icon: BiSolidFace, text: 'Users', link: `/${username}/users/`},
+        {icon: BiSolidExtension, text: 'Integraciones', link: `/${username}/integrations/`}
     ]
     
     useEffect(() => {

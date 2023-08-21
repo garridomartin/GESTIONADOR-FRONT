@@ -13,6 +13,7 @@ import { setCurrentUser } from "../redux/features/userSlice";
 
 /********* typeScriptsTypes ***********/
 type AuthContextValue = {
+    status: string;
 }
 
 type AuthProviderProps = {
@@ -21,18 +22,21 @@ type AuthProviderProps = {
 /********* end typeScriptsTypes ***********/
 
 const AuthContext = createContext<AuthContextValue>({} as AuthContextValue);
+export const useAuth = () => React.useContext(AuthContext);
 
 
 const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const dispatch = useAppDispatch();
-    const { data }: {[key: string]: any} = useGetUserQuery('currentUser');
+    const { data, status }: {[key: string]: any} = useGetUserQuery('currentUser');
 
     useEffect(() => {
         data && dispatch(setCurrentUser(data));
     }, [data])
 
     return (
-        <AuthContext.Provider value={{}}>
+        <AuthContext.Provider value={{
+            status
+        }}>
             {children}
         </AuthContext.Provider>
     )
